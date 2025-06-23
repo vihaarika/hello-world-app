@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: vihaarikahelloworldapp 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vihaarikahelloworldapp
+  template:
+    metadata:
+      labels:
+        app: vihaarikahelloworldapp 
+    spec:
+      containers:
+        - name: vihaarikahelloworldapp 
+          image: ponnaladevtrainacr.azurecr.io/vihaarikahelloworldapp
+          ports:
+          - containerPort: 80
